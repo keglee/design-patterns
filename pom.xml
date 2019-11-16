@@ -9,6 +9,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>abstract-factory</module>
+        <module>factory-method</module>
     </modules>
 
     <properties>

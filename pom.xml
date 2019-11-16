@@ -10,6 +10,7 @@
     <modules>
         <module>abstract-factory</module>
         <module>factory-method</module>
+        <module>builder</module>
     </modules>
 
     <properties>

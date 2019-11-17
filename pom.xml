@@ -12,6 +12,7 @@
         <module>factory-method</module>
         <module>builder</module>
         <module>prototype</module>
+        <module>prototype-manager</module>
     </modules>
 
     <properties>

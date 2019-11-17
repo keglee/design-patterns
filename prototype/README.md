@@ -202,4 +202,4 @@ public class Application {
 ## 延伸
 
 - [Java中克隆方法以及深克隆和浅克隆](https://github.com/iversonx/design-patterns/tree/master/prototype2)
-- [原型管理器](https://github.com/iversonx/design-patterns/tree/master/prototypeManager)
+- [原型管理器](https://github.com/iversonx/design-patterns/tree/master/prototype-manager)

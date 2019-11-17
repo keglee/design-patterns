@@ -5,3 +5,4 @@
 
 - [使用工厂方法模式实现导出数据框架](https://github.com/iversonx/design-patterns/tree/master/factory-method)
 - [使用构建者模式实现导出文件的内容的构建过程](https://github.com/iversonx/design-patterns/tree/master/builder)
+- [使用原型模式实现订单拆分功能](https://github.com/iversonx/design-patterns/tree/master/prototype)

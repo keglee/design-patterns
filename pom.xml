@@ -14,6 +14,7 @@
         <module>prototype</module>
         <module>prototype-manager</module>
         <module>prototype2</module>
+        <module>singleton</module>
     </modules>
 
     <properties>

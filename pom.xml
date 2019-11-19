@@ -15,6 +15,7 @@
         <module>prototype-manager</module>
         <module>prototype2</module>
         <module>singleton</module>
+        <module>facade</module>
     </modules>
 
     <properties>

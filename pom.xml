@@ -16,6 +16,7 @@
         <module>prototype2</module>
         <module>singleton</module>
         <module>facade</module>
+        <module>adapter</module>
     </modules>
 
     <properties>

@@ -8,7 +8,7 @@ import java.util.*;
  * @date 2019/11/20 19:22
  */
 public class LogData {
-    public final static Map<String, LogModel> DATA = new HashMap<>();
+    public static Map<String, LogModel> DATA = new HashMap<>();
 
     // 模拟数据
     static  {

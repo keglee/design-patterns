@@ -2,6 +2,11 @@
 
 将类的接口转换成客户期望的接口。适配器模式使接口不兼容的而不能一起工作的类可以一起工作。
 
+> 适配器模式主要的功能时进行转换匹配，其目的复用已有功能，而不是重新实现接口。
+
+> 适配器模式的本质是：转换匹配，复用功能。
+
+
 ## 生活中的例子
 
 在使用笔记本时，有时我们需要将笔记本连接到一个大的显示器上。假设笔记本使用的是DVI接口，
@@ -121,17 +126,84 @@ public class LogDbOperate implements LogDbOperateApi {
 ```java
 
 public class Adapter implements LogDbOperateApi {
-    private LogFileOperateApi adaptee;
+    private LogFileOperateApi apdatee;
+    public Adapter(LogFileOperateApi apdatee) {
+        this.apdatee = apdatee;
+    }
+
+    @Override
+    public void insertLog(LogModel log) {
+        // 模拟从文件中读取内容
+        Map<String, LogModel> data = apdatee.readLog();
+        // 加入新的日志对象
+        data.put(log.getLogId(), log);
+        // 重新写入文件
+        apdatee.writeLog(data);
+    }
+
+    @Override
+    public Map<String, LogModel> mapLog() {
+        return apdatee.readLog();
+    }
+
+    @Override
+    public LogModel get(String logId) {
+        Map<String, LogModel> data = apdatee.readLog();
+        return data.get(logId);
+    }
 }
 
 
+public class Application {
+    public static void main(String[] args) {
+        LogModel m = new LogModel();
+        String uuid = UUID.randomUUID().toString();
+        m.setLogId(uuid);
+        m.setOperateTime("2019-10-14 00:12:45");
+        m.setOperateUser("admin");
+        Map<String, LogModel> map = new HashMap<>();
+        map.put(m.getLogId(), m);
+        // 创建操作日志文件的对象
+        LogFileOperateApi fileApi = new LogFileOperate();
+        // 创建新版操作日志的接口对象
+        LogDbOperateApi api = new Adapter(fileApi);
+        // 保存日志
+        api.insertLog(m);
+        // 读取日志内容
+        Map<String, LogModel> logs = api.mapLog();
+        System.out.println(logs);
+        // 根据logid获取日志信息
+        System.out.println(api.get(uuid));
+    }
+}
+
 ```
+
+## 适配器模式的实现
+
+### 常见实现
+
+在实现适配器时，适配器通常时一个类，一般会让适配类去实现Target接口，然后在适配器的具体实现里面调用Adaptee。前面的例子就是这样的。
+
+### 智能适配器
+
+适配器也可以实现一些Adaptee没有实现，但在Target中定义的功能。这就需要在适配器的实现里加入新功能的实现。这种适配器称为智能适配器。
+
+### 适配多个Adaptee
+
+当实现Target的功能需要适配多个模块的功能才能满足时，可以适配多个Adaptee。
+
+### 双向适配
+
+适配器可以实现双向，把Adaptee适配成Target的同时，也可以把Target适配成Adaptee。
 
 ## 好处 
 
-
+- 适配器模式使只是接口不兼容的已有功能能够得到复用
 
 ## 适用场景
 
 以下情况可以考虑使用适配器模式
 
+- 当在使用一个已存在的类，但是它的接口不符合需求时，可以使用适配器模式，将已有的实现转换成需要的接口。
+- 当想创建一个可以复用的类，这个类可能和一些不兼容的类一起工作时，可以使用适配器模式，进行适配。

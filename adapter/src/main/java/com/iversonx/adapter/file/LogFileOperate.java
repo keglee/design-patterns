@@ -21,6 +21,6 @@ public class LogFileOperate implements LogFileOperateApi {
 
     public void writeLog(Map<String, LogModel> data) {
         System.out.println("写入日志到文件");
-        LogData.DATA.putAll(data);
+        LogData.DATA = data;
     }
 }

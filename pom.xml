@@ -17,6 +17,7 @@
         <module>singleton</module>
         <module>facade</module>
         <module>adapter</module>
+        <module>composite</module>
     </modules>
 
     <properties>

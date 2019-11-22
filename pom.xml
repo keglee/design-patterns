@@ -18,6 +18,7 @@
         <module>facade</module>
         <module>adapter</module>
         <module>composite</module>
+        <module>decorator</module>
     </modules>
 
     <properties>

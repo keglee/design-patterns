@@ -12,7 +12,7 @@
 
 ## 结构型模式
 
-- [使用外观模式封装子系统交互，简化客户端调用](./iversonx/design-patterns/tree/master/facade)
+- [使用外观模式封装子系统交互，简化客户端调用](./facade)
 - [使用适配器模式让原本不兼容的接口可以一起工作](https://github.com/iversonx/design-patterns/tree/master/adapter)
 - [使用组合模式使部分-整体的操作具有一致性](https://github.com/iversonx/design-patterns/tree/master/composite)
 - [使用装饰模式动态为对象增加功能](https://github.com/iversonx/design-patterns/tree/master/decorator)

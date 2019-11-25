@@ -19,6 +19,7 @@
         <module>adapter</module>
         <module>composite</module>
         <module>decorator</module>
+        <module>bridge</module>
     </modules>
 
     <properties>

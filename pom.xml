@@ -21,6 +21,7 @@
         <module>decorator</module>
         <module>proxy</module>
         <module>bridge</module>
+        <module>flyweight</module>
     </modules>
 
     <properties>

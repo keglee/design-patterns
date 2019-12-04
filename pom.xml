@@ -23,6 +23,7 @@
         <module>bridge</module>
         <module>flyweight</module>
         <module>template-method</module>
+        <module>strategy</module>
     </modules>
 
     <properties>

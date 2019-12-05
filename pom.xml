@@ -24,6 +24,7 @@
         <module>flyweight</module>
         <module>template-method</module>
         <module>strategy</module>
+        <module>state</module>
     </modules>
 
     <properties>
